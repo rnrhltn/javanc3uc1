@@ -30,5 +30,6 @@ public static void main(String[] args) {
       else{ // VALIDATION
           System.out.println("Please input numbers only.");
       }
+      sc.close();
     }  
 }
