@@ -1,17 +1,8 @@
-public class InherLesson extends SubClasser {
-    
-}
-
-final class FinClasser{
-
-}
-
-class SubClasser{
-
-}
-
-abstract class AbsClasser{ 
-    
+public class InherLesson {
+    public static void main(String[] args) {
+        Ranger ranger = new Ranger(100, 200, 150, 50, 50, 100);
+        ranger.displayStats();
+    }
 }
 
 abstract class Hero{
@@ -21,6 +12,10 @@ abstract class Hero{
     public Hero(int HP, int MP){
         this.HP = HP;
         this.MP = MP;
+     }
+    
+     public void displayStats(){
+        System.out.println("HP: " + HP + ", MP: " + MP);
      }
  }
 
@@ -36,12 +31,30 @@ abstract class Hero{
         this.Dex = Dex;
 
     }
+    @Override
+    public void displayStats(){
+        System.out.println("Str: " + Str + " Intelligence: " + Intel + "Dex: " + Dex );
+     }
  }
 
 abstract class Range extends Stats{
     int Range;
+
+    public Range(int Range, int HP, int MP, int Str, int Intel, int Dex){
+        super(HP, MP, Str, Intel, Dex);
+        this.Range = Range;
+    }
 }
 
-class Ranger extends Hero{
+class Ranger extends Range{
+    public Ranger(int Range, int HP, int MP, int Str, int Intel, int Dex) {
+        super(Range, HP, MP, Str, Intel, Dex);
+    }
 
+    void attack(){
+        System.out.println("Ranger attacks with a ranged attack!");
+    }
 }
+
+
+
