@@ -2,6 +2,8 @@ public class InherLesson {
     public static void main(String[] args) {
         Ranger ranger = new Ranger(100, 200, 150, 50, 50, 100);
         ranger.displayStats();
+        ranger.attack();
+        ranger.specialSkill();
     }
 }
 
@@ -33,7 +35,8 @@ abstract class Hero{
     }
     @Override
     public void displayStats(){
-        System.out.println("Str: " + Str + " Intelligence: " + Intel + "Dex: " + Dex );
+        super.displayStats();
+        System.out.println("Str: " + Str + " Intelligence: " + Intel + " Dex: " + Dex );
      }
  }
 
@@ -53,6 +56,10 @@ class Ranger extends Range{
 
     void attack(){
         System.out.println("Ranger attacks with a ranged attack!");
+    }
+
+    public void specialSkill() {
+        System.out.println("Ranger uses a special skill!");
     }
 }
 
