@@ -48,5 +48,6 @@ public class FourArithmeticOp {
         } else {
             System.out.println("The Quotient of the two numbers is: " + quo);
         }
+        sc.close();
     }
 }
